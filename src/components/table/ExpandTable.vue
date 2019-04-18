@@ -1,16 +1,8 @@
 <template>
-    <el-table :data="tableData" v-loading.body="tableLoading" element-loading-text="拼命加载中" border fit highlight-current-row>
+    <el-table :data="tableData" row-key="id" v-loading.body="tableLoading" element-loading-text="拼命加载中" border fit highlight-current-row>
         <el-table-column label="菜单名称" align="left">
             <template slot-scope="scope">
                 <span class="tree-indent" v-for="index in scope.row.level" :key="index"></span>
-                <template v-if="scope.row.isParent">
-                    <span v-if="scope.row.isExpand" class="expand-icon" @click="foldTable(scope.row.id)">
-                        <i class="el-icon el-icon-arrow-down"></i>
-                    </span>
-                    <span v-else class="expand-icon" @click="expandTable(scope.row.id)">
-                        <i class="el-icon el-icon-arrow-right"></i>
-                    </span>
-                </template>
                 {{scope.row.title}}
             </template>
         </el-table-column>

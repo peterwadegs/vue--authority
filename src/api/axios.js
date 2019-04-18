@@ -4,7 +4,7 @@ import router from 'src/router';
 
 // 先判断环境，带端口的就默认访问本地
 if (!!location.port) {
-    Vue.prototype.HOST_PROXY_ADMIN = 'http://localhost:8080';  //need change 
+    Vue.prototype.HOST_PROXY_ADMIN = 'http://localhost:8383';  //need change
 } else {
     Vue.prototype.HOST_PROXY_ADMIN = 'http://permission-admin.yuanjy.com'; //need change location.origin.replace(/test/, 'admin');
 }
